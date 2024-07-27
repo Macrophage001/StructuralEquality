@@ -44,7 +44,7 @@ pub fn StructEql(comptime T: type, a: T, b: T) bool {
                 }
             }
         },
-        .Pointer => |_| {
+        .Pointer => {
             if (a == b) {
                 return StructEql(@TypeOf(a.*), a.*, b.*);
             }
